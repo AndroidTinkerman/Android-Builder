@@ -2,7 +2,7 @@
   {
     "kernelSource": {
             "name": "Quantum Kernel for j7eltetmo",
-            "repo": "https://github.com/AndroidTinkerman/Quantum-Kernel-NN-J7",
+            "repo": "https://github.com/AndroidTinkerman/Quantum-Kernel-NN-J7.git",
             "branch": "master",
             "device": "j7eltetmo",
             "defconfig": "arch/arm64/configs/j7eltetmo_defconfig"
@@ -10,7 +10,7 @@
     "toolchains": [
       {
         "name": "proton-clang",
-        "repo": "https://github.com/kdrag0n/proton-clang",
+        "repo": "https://github.com/kdrag0n/proton-clang.git",
         "branch": "master",
         "binaryEnv": ["./bin"]
       }
@@ -26,10 +26,10 @@
       }
     },
     "AnyKernel3": {
-      "use": true,
-      "release": true
+      "use": false,
+      "release": false
     },
-    "enableKernelSU": true,
+    "enableKernelSU": false,
     "enableLXC": false
   }
 ]
