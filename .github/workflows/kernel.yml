@@ -306,61 +306,61 @@ jobs:
           # tree ${{ env.OUT_DIR }}
 
       - name: 💛 Upload Image
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         env:
           ARCH: ${{ steps.generate-args.outputs.ARCH }}
         with:
-          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-Image
+          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-Image-${{ matrix.runs-on }}
           path: ${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/boot/Image
           if-no-files-found: ignore
           retention-days: 7
 
       - name: 💙 Upload Image.gz
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         env:
           ARCH: ${{ steps.generate-args.outputs.ARCH }}
         with:
-          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-Image.gz
+          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-Image.gz-${{ matrix.runs-on }}
           path: ${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/boot/Image.gz
           if-no-files-found: ignore
           retention-days: 7
 
       - name: 💙 Upload Image.gz-dtb
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         env:
           ARCH: ${{ steps.generate-args.outputs.ARCH }}
         with:
-          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-Image.gz-dtb
+          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-Image.gz-dtb-${{ matrix.runs-on }}
           path: ${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/boot/Image.gz-dtb
           if-no-files-found: ignore
           retention-days: 7
 
       - name: 💜 Upload dtb
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         env:
           ARCH: ${{ steps.generate-args.outputs.ARCH }}
         with:
-          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-dtb
+          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-dtb-${{ matrix.runs-on }}
           path: ${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/boot/dtb
           if-no-files-found: ignore
           retention-days: 7
 
       - name: ❤️ Upload dtbo.img
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         env:
           ARCH: ${{ steps.generate-args.outputs.ARCH }}
         with:
-          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-dtbo.img
+          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-dtbo.img-${{ matrix.runs-on }}
           path: ${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/boot/dtbo.img
           if-no-files-found: ignore
           retention-days: 7
 
       - name: ☢️ Upload output directory
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         env:
           ARCH: ${{ steps.generate-args.outputs.ARCH }}
         with:
-          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-Output
+          name: ${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}-Output-${{ matrix.runs-on }}
           path: ${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/boot/
           retention-days: 7
 
@@ -409,10 +409,10 @@ jobs:
       - name: "💾 Upload AnyKernel3 image => (${{ env.BUILD_DATE }})"
         env:
           ANYKERNEL3_FILE: "AnyKernel3-${{ env.KERNEL_NAME }}-${{ env.BUILD_DATE }}"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ env.USE_ANYKERNEL3 == 'true' }}
         with:
-          name: "${{ env.ANYKERNEL3_FILE }}"
+          name: "${{ env.ANYKERNEL3_FILE-matrix.runs-on }}" 
           path: AnyKernel3/*
 
       - name: 🧧 Create GitHub Release => (${{ env.BUILD_DATE }})
