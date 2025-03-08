@@ -127,7 +127,7 @@ jobs:
 
       - name: 🌟 Clone kernel source => (${{ env.KERNEL_REPO }})
         run: |
-          git clone ${{ env.KERNEL_BRANCH }} ${{ env.KERNEL_REPO }} ${{ env.KERNEL_NAME }} 
+          git clone ${{ env.KERNEL_REPO }}
 
       - name: 💫 Get toolchains
         env:
