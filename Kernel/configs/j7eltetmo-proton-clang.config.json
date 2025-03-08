@@ -2,7 +2,7 @@
   {
     "kernelSource": {
             "name": "Quantum Kernel for j7eltetmo",
-            "repo": "https://github.com/AndroidTinkerman/Quantum-Kernel-NN-J7/tree/master",
+            "repo": "https://github.com/AndroidTinkerman/Quantum-Kernel-NN-J7",
             "branch": "master",
             "device": "j7eltetmo",
             "defconfig": "arch/arm64/configs/j7eltetmo_defconfig"
