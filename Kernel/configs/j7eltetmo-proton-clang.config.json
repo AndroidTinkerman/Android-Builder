@@ -1,11 +1,11 @@
 [
   {
     "kernelSource": {
-            "name": "Quantum Kernel for j7eltetmo",
-            "repo": "https://github.com/AndroidTinkerman/Quantum-Kernel-NN-J7.git",
-            "branch": "master",
+            "name": "lineage-20.0",
+            "repo": "https://github.com/AndroidTinkerman/android_kernel_samsung_exynos7580.git",
+            "branch": "lineage-20.0",
             "device": "j7eltetmo",
-            "defconfig": "arch/arm64/configs/j7eltetmo_defconfig"
+            "defconfig": "j7eltetmo_defconfig"
     },
     "toolchains": [
       {
@@ -29,7 +29,7 @@
       "use": false,
       "release": false
     },
-    "enableKernelSU": false,
+    "enableKernelSU": true,
     "enableLXC": false
   }
 ]
